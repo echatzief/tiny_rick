@@ -1,6 +1,7 @@
 use crate::tools::types::{Permission, Tool};
+use serde::Deserialize;
 
-#[derive(Debug, serde::Deserialize)]
+#[derive(Clone, Deserialize)]
 pub struct Agent {
     pub name: String,
     pub system_prompt: String,

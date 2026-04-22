@@ -1,6 +1,10 @@
 use once_cell::sync::Lazy;
 
-use crate::{agents::types::Agent, prompts::builder::BUILDER_PROMPT, tools::types::{Permission, PermissionAction, Tool}};
+use crate::{
+    agents::types::Agent,
+    prompts::builder::BUILDER_PROMPT,
+    tools::types::{Permission, PermissionAction, Tool},
+};
 
 use crate::prompts::planner::PROMPT as PLANNER_PROMPT;
 
@@ -42,17 +46,24 @@ pub static DEFAULT_AGENTS: Lazy<Vec<Agent>> = Lazy::new(|| {
         Agent {
             name: "Planner".to_string(),
             system_prompt: PLANNER_PROMPT.to_string(),
-            tools: vec![
-                Tool::Read,
-                Tool::Grep,
-                Tool::Glob,
-                Tool::Webfetch,
-            ],
+            tools: vec![Tool::Read, Tool::Grep, Tool::Glob, Tool::Webfetch],
             tool_permissions: vec![
-                Permission { name: Tool::Read, action: PermissionAction::Ask },
-                Permission { name: Tool::Grep, action: PermissionAction::Ask },
-                Permission { name: Tool::Glob, action: PermissionAction::Ask },
-                Permission { name: Tool::Webfetch, action: PermissionAction::Ask },
+                Permission {
+                    name: Tool::Read,
+                    action: PermissionAction::Ask,
+                },
+                Permission {
+                    name: Tool::Grep,
+                    action: PermissionAction::Ask,
+                },
+                Permission {
+                    name: Tool::Glob,
+                    action: PermissionAction::Ask,
+                },
+                Permission {
+                    name: Tool::Webfetch,
+                    action: PermissionAction::Ask,
+                },
             ],
         },
         Agent {
@@ -68,17 +79,35 @@ pub static DEFAULT_AGENTS: Lazy<Vec<Agent>> = Lazy::new(|| {
                 Tool::Webfetch,
             ],
             tool_permissions: vec![
-                Permission { name: Tool::Bash, action: PermissionAction::Ask },
-                Permission { name: Tool::Edit, action: PermissionAction::Ask },
-                Permission { name: Tool::Write, action: PermissionAction::Ask },
-                Permission { name: Tool::Read, action: PermissionAction::Ask },
-                Permission { name: Tool::Grep, action: PermissionAction::Ask },
-                Permission { name: Tool::Glob, action: PermissionAction::Ask },
-                Permission { name: Tool::Webfetch, action: PermissionAction::Ask },
+                Permission {
+                    name: Tool::Bash,
+                    action: PermissionAction::Ask,
+                },
+                Permission {
+                    name: Tool::Edit,
+                    action: PermissionAction::Ask,
+                },
+                Permission {
+                    name: Tool::Write,
+                    action: PermissionAction::Ask,
+                },
+                Permission {
+                    name: Tool::Read,
+                    action: PermissionAction::Ask,
+                },
+                Permission {
+                    name: Tool::Grep,
+                    action: PermissionAction::Ask,
+                },
+                Permission {
+                    name: Tool::Glob,
+                    action: PermissionAction::Ask,
+                },
+                Permission {
+                    name: Tool::Webfetch,
+                    action: PermissionAction::Ask,
+                },
             ],
         },
-
     ]
 });
-
-

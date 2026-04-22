@@ -1,6 +1,6 @@
 use serde::Deserialize;
 
-#[derive(Debug, Deserialize)]
+#[derive(Clone, Deserialize)]
 pub enum Tool {
     Bash,
     Edit,
@@ -11,14 +11,14 @@ pub enum Tool {
     Webfetch,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Clone, Deserialize)]
 pub enum PermissionAction {
     Allow,
     Deny,
     Ask,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Clone, Deserialize)]
 pub struct Permission {
     pub name: Tool,
     pub action: PermissionAction,
